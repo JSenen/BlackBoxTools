@@ -41,7 +41,7 @@ public class Main {
                     break;
                 case "2":
                     System.out.println("\nOption 2 selected - Adding URL to Java Exception Sites");
-                    System.out.print("Enter URL exception > ");
+                    System.out.print("🌐 Enter URL exception > ");
                     String url = selection.nextLine();
                     JavaExceptionSiteAdder.addExceptionSite(url);
                     break;

@@ -1,5 +1,6 @@
 package com.blackboxtools.tools;
 
+import java.io.Console;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -8,11 +9,19 @@ public class AddUser {
     public AddUser() {
         try (Scanner enterData = new Scanner(System.in)) {
 
-            System.out.print("Name of new user administrator: ");
+            System.out.print("👨🏻‍💻 Name of new user administrator: ");
             String user = enterData.nextLine().trim();  // Eliminamos espacios extra
 
-            System.out.print("Password for new user administrator: ");
-            String pass = enterData.nextLine().trim();
+            //Use of Console to dont show password when de user type it
+            Console console = System.console();
+            char[] passwordArray;
+            if (console != null) {
+                passwordArray = console.readPassword("Password for new user administrator: ");
+            } else {
+                System.out.print("🔐 Password for new user administrator : ");
+                passwordArray = enterData.nextLine().toCharArray();
+            }
+            String pass = new String(passwordArray);
 
             // Validación para evitar errores con datos vacíos
             if (user.isEmpty() || pass.isEmpty()) {

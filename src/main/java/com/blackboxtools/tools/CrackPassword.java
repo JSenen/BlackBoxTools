@@ -49,7 +49,7 @@ public class CrackPassword {
         if (decision.equalsIgnoreCase("n")) {
             // Pedir la ruta al usuario
             Scanner pathToRockYou = new Scanner(System.in);
-            System.out.println("Enter path to rockyou.txt (text file with passwords) > ");
+            System.out.println("📓 Enter path to rockyou.txt (text file with passwords) > ");
             path = pathToRockYou.next();
 
             // Verificar si el archivo existe antes de continuar
